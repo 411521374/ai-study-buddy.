@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI Study Buddy helps students learn with explanations, quizzes, summaries, English practice and study planning.">
+  <title>StudyBuddy — Your learning companion</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">✦</div><div><strong>StudyBuddy</strong><small>AI learning companion</small></div></div>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="chat"><span>◉</span> Study chat</button>
+      <button class="nav-item" data-view="quiz"><span>▤</span> Quiz generator</button>
+      <button class="nav-item" data-view="summary"><span>≡</span> Notes summarizer</button>
+      <button class="nav-item" data-view="english"><span>文</span> English practice</button>
+      <button class="nav-item" data-view="planner"><span>▦</span> Study planner</button>
+      <div class="sidebar-bottom">
+        <div class="mode-card"><div class="mode-dot"></div><div><strong>Demo mode</strong><small>Ready to explore</small></div></div>
+        <small class="sidebar-note">Built for curious students.</small>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="eyebrow">YOUR PERSONAL LEARNING SPACE</span><h1 id="page-title">Study chat</h1></div><div class="top-actions"><span class="demo-pill">● DEMO MODE</span><button class="avatar" aria-label="Profile">S</button></div></header>
+      <section class="view active" id="view-chat">
+        <div class="welcome"><div class="sparkle">✦</div><p class="eyebrow">LEARN SOMETHING NEW</p><h2>What are we learning<br><em>today?</em></h2><p class="muted">Ask a question and get a clear, student-friendly explanation.</p></div>
+        <div class="chat-card">
+          <div class="chat-messages" id="chat-messages"><div class="message assistant"><div class="bot-icon">✦</div><div><strong>StudyBuddy</strong><p>Hi! I'm your study companion. Ask me about a topic, or try one of the suggestions below.</p></div></div></div>
+          <form id="chat-form" class="composer"><input id="chat-input" autocomplete="off" placeholder="e.g. Explain machine learning in simple words..." aria-label="Ask a study question"><button class="send-btn" aria-label="Send">↑</button></form>
+          <div class="suggestions"><button class="suggestion" data-prompt="Explain photosynthesis in simple words.">Explain photosynthesis</button><button class="suggestion" data-prompt="Give me a beginner explanation of artificial intelligence.">What is AI?</button><button class="suggestion" data-prompt="How can I remember new English vocabulary?">Study tips</button></div>
+        </div>
+      </section>
+      <section class="view" id="view-quiz">
+        <div class="section-intro"><p class="eyebrow">PRACTISE & CHECK YOURSELF</p><h2>Make learning <em>stick.</em></h2><p class="muted">Create a short practice quiz from any topic.</p></div>
+        <div class="tool-card"><label for="quiz-topic">What topic are you studying?</label><input id="quiz-topic" placeholder="e.g. Basic computer networks"><div class="inline-fields"><label>Difficulty<select id="quiz-level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label><label>Questions<select id="quiz-count"><option>3</option><option>5</option></select></label></div><button class="primary-btn" id="make-quiz">Generate quiz <span>→</span></button><div id="quiz-output" class="output-area"></div></div>
+      </section>
+      <section class="view" id="view-summary">
+        <div class="section-intro"><p class="eyebrow">TURN LONG NOTES INTO CLARITY</p><h2>Less scrolling.<br><em>More understanding.</em></h2><p class="muted">Paste class notes and get a concise study guide.</p></div>
+        <div class="tool-card"><label for="notes-input">Paste your notes</label><textarea id="notes-input" rows="8" placeholder="Paste a paragraph or your lecture notes here..."></textarea><button class="primary-btn" id="summarize">Summarize notes <span>→</span></button><div id="summary-output" class="output-area"></div></div>
+      </section>
+      <section class="view" id="view-english">
+        <div class="section-intro"><p class="eyebrow">BUILD CONFIDENCE, ONE SENTENCE AT A TIME</p><h2>Practice your <em>English.</em></h2><p class="muted">Write a sentence and receive a supportive correction.</p></div>
+        <div class="tool-card"><label for="english-input">Your English sentence</label><textarea id="english-input" rows="4" placeholder="e.g. Yesterday I go to the library."></textarea><button class="primary-btn" id="check-english">Check my sentence <span>→</span></button><div id="english-output" class="output-area"></div></div>
+      </section>
+      <section class="view" id="view-planner">
+        <div class="section-intro"><p class="eyebrow">MAKE A LITTLE PROGRESS EVERY DAY</p><h2>Your study <em>plan.</em></h2><p class="muted">Add tasks and keep track of what you have completed.</p></div>
+        <div class="tool-card"><form id="task-form" class="task-form"><input id="task-input" placeholder="e.g. Review week 4 lecture notes" aria-label="New study task"><button class="primary-btn">Add task <span>+</span></button></form><div id="task-list" class="task-list"></div><p class="small-note">Your tasks are saved in this browser on this device.</p></div>
+      </section>
+      <footer>StudyBuddy · Learn at your own pace <span>Made with AI-assisted development</span></footer>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
